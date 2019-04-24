@@ -1,5 +1,5 @@
 // Do not change any of the function names
-
+// debugger;
   // x and y are integers.  Return the larger integer
   // if they are the same return either one
 const getBiggest = (x, y) => {
@@ -72,26 +72,31 @@ const isPrime = (num) => {
 const returnFirst = arr => arr[0];
   // return the first item from the array
 
-const returnLast = arr => arr[-1];
+const returnLast = arr => arr[arr.length - 1];
   // return the last item of the array
 
 const getArrayLength = arr => arr.length;
   // return the length of the array
 
 const incrementByOne = (arr) => {
-  arr.map((x) => {
-    return x++;
-  });
+  return arr.map(e => e + 1);
 };
   // arr is an array of integers
   // increase each integer by one
   // return the array
 
-const addItemToArray = (arr, item) => arr.push(item);
+const addItemToArray = (arr, item) => {
+  arr.push(item);
+  return arr;
+};
+
   // add the item to the end of the array
   // return the array
 
-const addItemToFront = (arr, item) => arr.unshift(item);
+const addItemToFront = (arr, item) => {
+  arr.unshift(item);
+  return arr;
+};
   // add the item to the front of the array
   // return the array
   // hint: use the array method .unshift
@@ -103,30 +108,30 @@ const wordsToSentence = words => words.join(' ');
   // example: ['Hello', 'world!'] -> 'Hello world!'
 
 const contains = (arr, item) => {
-  return (arr.find(item) === true);
+  return arr.includes(item);
   // check to see if item is inside of arr
   // return true if it is, otherwise return false
 };
 
 const addNumbers = (numbers) => {
-  numbers.reduce(acc, x) {
-    
-  }
+  return numbers.reduce((acc, x) => (acc + x));
+};
   // numbers is an array of integers.
   // add all of the integers and return the value
-};
 
 const averageTestScore = (testScores) => {
+  return testScores.reduce((acc, currVal) => acc + currVal) / testScores.length;
   // testScores is an array.  Iterate over testScores and compute the average.
   // return the average
 };
 
 const largestNumber = (numbers) => {
+  return Math.max(...numbers);
   // numbers is an array of integers
   // return the largest integer
 };
 
-// Do not modify code below this line.
+// Do not modify code below this line.ac
 // --------------------------------
 
 module.exports = {
